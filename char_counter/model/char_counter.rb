@@ -1,6 +1,7 @@
 class CharCounter
 
 	def self.count(word)
+		word = word.delete " "
 	    total = Hash.new (0)
 
 	    word.each_char do |char|
