@@ -6,7 +6,8 @@ class CharCounter
 	    word.each_char do |char|
 	        total[char] = total[char] + 1
 	    end
-	
+		
+		total.default = nil
 	    total
 	end
     
