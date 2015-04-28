@@ -14,9 +14,9 @@ class Tenis
 
     def anotar_un_punto(numero_del_jugador)
         if numero_del_jugador == 1
-            puntaje.sumar_puntos_jugador(1,1)
+            puntaje.sumar_puntos_jugador(1)
         else
-            puntaje.sumar_puntos_jugador(2,1)
+            puntaje.sumar_puntos_jugador(2)
         end
 
     end
