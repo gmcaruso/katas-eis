@@ -40,9 +40,9 @@ class Puntaje
 
     def gano_alguien
         if sets_jugador_uno == 2
-            puts "GANO EL JUGADOR NUMERO UNO"
+            "GANO EL JUGADOR NUMERO UNO"
         elsif sets_jugador_dos == 2
-            puts "GANO EL JUGADOR NUMERO DOS"
+            "GANO EL JUGADOR NUMERO DOS"
         end
     end
 

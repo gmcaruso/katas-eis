@@ -45,7 +45,17 @@ describe 'Tenis' do
         expect(tenis.puntaje.puntos_jugador_uno).to eq 0
         expect(tenis.puntaje.puntos_jugador_dos).to eq 0
         expect(tenis.puntaje.games_jugador_uno).to eq 0
+        expect(tenis.puntaje.games_jugador_dos).to eq 0
         expect(tenis.puntaje.sets_jugador_uno).to eq (sets + 1)
+      end
+
+      it 'Cuando un jugador alcance los 6 games gana el set' do
+        tenis= Tenis.new("Pepe","Beto")
+        tenis.puntaje.set_puntos_jugador_uno(3)
+        tenis.puntaje.set_puntos_jugador_dos(2)
+        tenis.puntaje.set_games_jugador_uno(5)
+        tenis.puntaje.set_sets_jugador_uno(1)
+        expect(tenis.anotar_un_punto(1)).to eq "GANO EL JUGADOR NUMERO UNO"
       end
     
   end
