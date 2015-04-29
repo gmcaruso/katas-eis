@@ -15,6 +15,11 @@ class Puntaje
             if (puntos_jugador_uno == 3 && puntos_jugador_dos <= 2 ) || (puntos_jugador_uno == 4 && puntos_jugador_dos <= 3)
                 reset_puntos
                 set_games_jugador_uno(games_jugador_uno + 1)
+                if games_jugador_uno == 6
+                    reset_games
+                    set_sets_jugador_uno(sets_jugador_uno + 1)
+                    gano_alguien
+                end
             else
                 set_puntos_jugador_uno(puntos_jugador_uno + 1)
             end
@@ -22,15 +27,33 @@ class Puntaje
             if (puntos_jugador_uno <= 2 && puntos_jugador_dos == 3 ) || (puntos_jugador_uno <= 3 && puntos_jugador_dos == 4)
                 reset_puntos
                 set_games_jugador_dos(games_jugador_dos + 1)
+                if games_jugador_dos == 6
+                    reset_games
+                    set_sets_jugador_dos(sets_jugador_dos + 1)
+                    gano_alguien
+                end
             else
                 set_puntos_jugador_dos(puntos_jugador_dos + 1)
             end
         end
     end
 
+    def gano_alguien
+        if sets_jugador_uno == 2
+            puts "GANO EL JUGADOR NUMERO UNO"
+        elsif sets_jugador_dos == 2
+            puts "GANO EL JUGADOR NUMERO DOS"
+        end
+    end
+
     def reset_puntos
         set_puntos_jugador_uno(0)
         set_puntos_jugador_dos(0)
+    end 
+
+    def reset_games
+        set_games_jugador_uno(0)
+        set_games_jugador_dos(0)
     end 
 
     def ver_puntos()
@@ -90,6 +113,10 @@ class Puntaje
 
     def games_jugador_dos
         @games_jugador_dos
+    end
+
+    def sets_jugador_uno
+        @sets_jugador_uno
     end
 
 

@@ -30,6 +30,19 @@ describe 'Tenis' do
         expect(tenis.puntaje.puntos_jugador_dos) == 0
         expect(tenis.puntaje.games_jugador_uno) == games1 + 1
       end
+
+      it 'Cuando un jugador gana un set, los games vuelven a 0-0 y lo mismo ocurre con los puntos' do
+        tenis= Tenis.new("Pepe","Beto")
+        tenis.puntaje.set_puntos_jugador_uno(3)
+        tenis.puntaje.set_puntos_jugador_dos(2)
+        tenis.puntaje.set_games_jugador_dos(5)
+        sets= tenis.puntaje.sets_jugador_uno
+        tenis.anotar_un_punto(1)
+        expect(tenis.puntaje.puntos_jugador_uno) == 0
+        expect(tenis.puntaje.puntos_jugador_dos) == 0
+        expect(tenis.puntaje.games_jugador_uno) == 0
+        expect(tenis.puntaje.sets_jugador_uno) == sets + 1
+      end
     
   end
 
