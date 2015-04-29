@@ -56,8 +56,16 @@ class Puntaje
         set_games_jugador_dos(0)
     end 
 
-    def ver_puntos()
-    	puts transformar_ptos_a_ptos_tenis(@puntos_jugador_uno) + ' - ' + transformar_ptos_a_ptos_tenis(@puntos_jugador_dos)
+    def ver_puntos
+        "#{transformar_ptos_a_ptos_tenis(@puntos_jugador_uno)} - #{transformar_ptos_a_ptos_tenis(@puntos_jugador_dos)}"
+    end
+
+    def ver_sets
+        "#{sets_jugador_uno} - #{sets_jugador_dos}"
+    end
+
+    def ver_games
+        "#{games_jugador_uno} - #{games_jugador_dos}"
     end
 
     def transformar_ptos_a_ptos_tenis(cant_puntos)
@@ -73,14 +81,6 @@ class Puntaje
             when 4
                 "Ventaja"
             end
-    end
-
-    def ver_sets()
-    	puts String(@sets_jugador_uno) + ' - ' + String(@sets_jugador_dos)
-    end
-
-    def ver_games()
-    	puts String(@games_jugador_uno) +' - '+ String(@games_jugador_dos)
     end
 
     def set_puntos_jugador_uno(puntos)
@@ -114,10 +114,22 @@ class Puntaje
     def games_jugador_dos
         @games_jugador_dos
     end
+    
+    def set_sets_jugador_uno(numero)
+        @sets_jugador_uno= numero
+    end
 
     def sets_jugador_uno
         @sets_jugador_uno
     end
 
+    def sets_jugador_dos
+        @sets_jugador_dos
+    end
+
+# tenis= Tenis.new()
+# tenis.mostrar_puntos
+# tenis.mostrar_sets
+# tenis.mostrar_games
 
 end

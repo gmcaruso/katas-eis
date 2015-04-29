@@ -20,4 +20,17 @@ class Tenis
         end
 
     end
+
+    def mostrar_puntos
+        @puntaje.ver_puntos
+    end
+
+    def mostrar_sets
+        @puntaje.ver_sets
+    end
+
+    def mostrar_games
+        @puntaje.ver_games
+    end
+
 end
