@@ -24,13 +24,11 @@ describe 'Tenis' do
         tenis= Tenis.new("Pepe","Beto")
         tenis.puntaje.set_puntos_jugador_uno(3)
         tenis.puntaje.set_puntos_jugador_dos(2)
-        tenis.puntaje.set_games_jugador_uno(1)
         games1= tenis.puntaje.games_jugador_uno
-        puntos1= tenis.puntaje.puntos_jugador_uno
-        puntos2= tenis.puntaje.puntos_jugador_dos
         tenis.anotar_un_punto(1)
-        expect(tenis.puntaje.puntos_jugador_uno) == puntos1
-        expect(tenis.puntaje.games_jugador_uno) == games1
+        expect(tenis.puntaje.puntos_jugador_uno) == 0
+        expect(tenis.puntaje.puntos_jugador_dos) == 0
+        expect(tenis.puntaje.games_jugador_uno) == games1 + 1
       end
     
   end
