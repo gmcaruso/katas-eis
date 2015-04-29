@@ -25,5 +25,5 @@ describe 'Tenis' do
           expect(tenis.anotar_un_punto(1)).to eq "GANO EL JUGADOR NUMERO UNO"
         end
   end
-  
+  #
 end
