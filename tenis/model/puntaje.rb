@@ -127,9 +127,4 @@ class Puntaje
         @sets_jugador_dos
     end
 
-# tenis= Tenis.new()
-# tenis.mostrar_puntos
-# tenis.mostrar_sets
-# tenis.mostrar_games
-
 end
