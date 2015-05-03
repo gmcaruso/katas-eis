@@ -24,6 +24,15 @@ describe Tablero do
 
 		end
 
+		it 'Si la posición esta vacía debe devolver -Esta vacío-' do
+			tablero= Tablero.new(4,4)
+			tablero.agregar_barco("3:3")
+			tablero.agregar_barco("3:2")
+			tablero.agregar_barco("3:1")
+
+			expect(tablero.ver_posicion("2:2")).to eq "Esta vacío"
+		end
+
 		
 	end
 

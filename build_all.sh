@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 set -e
 bundle install
-cd char_counter
+cd batalla_naval
 bundle exec rake
