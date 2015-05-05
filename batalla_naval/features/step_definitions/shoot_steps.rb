@@ -11,16 +11,20 @@ Given(/^I shoot to position "(.*?)"$/) do |posicion|
 end
 
 Then(/^I get hit$/) do
-  	puts(@resultado == "Tocado")
-  	puts @resultado
+  	if @resultado == "Tocado"
+  		puts @resultado
+  	end
 end
 
 Then(/^I get water$/) do
-	puts (@resultado == "Agua")
+	if @resultado == "Agua"
+		puts @resultado
+	end
 end
 
 Then(/^I get sink$/) do
-	puts(@resultado == "Hundido")
-	puts @resultado
+	if @resultado == "Hundido"
+		puts @resultado
+	end
 end
 
