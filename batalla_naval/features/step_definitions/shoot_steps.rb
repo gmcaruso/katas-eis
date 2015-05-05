@@ -1,19 +1,26 @@
-Given(/^a large ship in position: “(\d+):(\d+)”$/) do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+require_relative '../../app/models/tablero.rb'
+require_relative '../../app/models/barco.rb'
+
+Given(/^a large ship in position: "(.*?)" "(.*?)"$/) do |posicion1, posicion2|
+	posiciones= [posicion1, posicion2]
+  	@barco_grande= Barco.new(posiciones)
 end
 
-Given(/^I shoot to position “(\d+):(\d+)”$/) do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+Given(/^I shoot to position "(.*?)"$/) do |posicion|
+ 	@resultado= @tablero.disparar_en(posicion)
 end
 
 Then(/^I get hit$/) do
-  pending # express the regexp above with the code you wish you had
+  	pending
 end
 
 Then(/^I get water$/) do
-  pending # express the regexp above with the code you wish you had
+  	if @resultado == "Agua"
+  		puts "AGUA"
+  	end
 end
 
 Then(/^I get sink$/) do
-  pending # express the regexp above with the code you wish you had
+  	pending
 end
+

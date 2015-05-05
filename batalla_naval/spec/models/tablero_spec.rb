@@ -9,16 +9,15 @@ describe Tablero do
 		it { should respond_to :ver_posicion }
 		it { should respond_to :agregar_barco }
 		
-		
 	end
 
 	describe 'ver_posicion' do
 
 		it 'Si la posición esta ocupada debe devolver -Hay Barco-' do
 			tablero= Tablero.new(4,4)
-			tablero.agregar_barco("3:3")
-			tablero.agregar_barco("3:2")
-			tablero.agregar_barco("3:1")
+			barco= Barco.new(["3:1","3:2","3:3"])
+			
+			tablero.agregar_barco(barco)
 
 			expect(tablero.ver_posicion("3:2")).to eq "Hay Barco"
 
@@ -26,14 +25,27 @@ describe Tablero do
 
 		it 'Si la posición esta vacía debe devolver -Esta vacío-' do
 			tablero= Tablero.new(4,4)
-			tablero.agregar_barco("3:3")
-			tablero.agregar_barco("3:2")
-			tablero.agregar_barco("3:1")
+			barco= Barco.new(["3:1","3:2","3:3"])
+			
+			tablero.agregar_barco(barco)
 
 			expect(tablero.ver_posicion("2:2")).to eq "Esta vacío"
 		end
-
-		
 	end
+
+	describe 'disparar_en' do
+
+		it 'Si disparo donde no hay un barco entonces debe devolver -Agua-' do
+			tablero= Tablero.new(4,4)
+			barco= Barco.new(["3:1","3:2","3:3"])
+			
+			tablero.agregar_barco(barco)
+
+			expect(tablero.disparar_en("3:4")).to eq "Agua"
+
+		end
+	end
+
+
 
 end
