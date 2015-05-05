@@ -46,6 +46,17 @@ describe Tablero do
 		end
 	end
 
+	describe 'agregar_barco' do
+
+		it 'Si coloco un barco dentro del mapa debe devolver -Barco agregado!-' do
+			tablero= Tablero.new(4,4)
+			barco= Barco.new(["3:1","3:2","3:3"])
+			
+			expect(tablero.agregar_barco(barco)).to eq "Barco agregado!"
+		end
+		
+	end
+
 
 
 end
