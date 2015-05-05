@@ -2,25 +2,25 @@ require_relative '../../app/models/tablero.rb'
 require_relative '../../app/models/barco.rb'
 
 Given(/^a large ship in position: "(.*?)" "(.*?)"$/) do |posicion1, posicion2|
-	posiciones= [posicion1, posicion2]
-  	@barco_grande= Barco.new(posiciones)
+  	@barco_grande= Barco.new([posicion1, posicion2])
+  	@tablero.agregar_barco(@barco_grande)
 end
 
 Given(/^I shoot to position "(.*?)"$/) do |posicion|
- 	@resultado= @tablero.disparar_en(posicion)
+ 	@resultado= @tablero.disparar_en(posicion.to_s)
 end
 
 Then(/^I get hit$/) do
-  	pending
+  	puts(@resultado == "Tocado")
+  	puts @resultado
 end
 
 Then(/^I get water$/) do
-  	if @resultado == "Agua"
-  		puts "AGUA"
-  	end
+	puts (@resultado == "Agua")
 end
 
 Then(/^I get sink$/) do
-  	pending
+	puts(@resultado == "Hundido")
+	puts @resultado
 end
 

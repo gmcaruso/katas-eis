@@ -43,11 +43,11 @@ class Tablero
 				if posicion_barco == posicion
 					barco.set_tamanho(barco.tamanho - 1)
 					if barco.tamanho <= 0
-						"Hundido"
-						break
+						return "Hundido"
+						
 					else
-						"Tocado"
-						break
+						return "Tocado"
+						
 					end
 				end
 			end
@@ -63,7 +63,7 @@ class Tablero
 	end
 
 	def esta_dentro_del_mapa(alto, ancho, posicion_del_barco, entra_en_mapa)
-		entra_en_mapa= entra_en_mapa && (posicion_del_barco[0].to_i < ancho && posicion_del_barco[2].to_i < alto)
+		entra_en_mapa= entra_en_mapa && (posicion_del_barco[0].to_i < ancho.to_i && posicion_del_barco[2].to_i < alto.to_i)
 	end
 
 	def posicionar_barco_en_radar(barco)

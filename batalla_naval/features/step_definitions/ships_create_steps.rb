@@ -6,8 +6,8 @@ Given(/^a board with dimensions "(.*?)" x "(.*?)"$/) do |dimension1, dimension2|
 end
 
 Given(/^I create a small ship in position "(.*?)"$/) do |posicion|
-	posiciones= [posicion]
-	@barco_chico= Barco.new(posiciones)  	
+	@barco_chico= Barco.new([posicion])  	
+	@tablero.agregar_barco(@barco_chico)
 end
 
 Then(/^position "(.*?)" is not empty$/) do |posicion|
@@ -15,8 +15,8 @@ Then(/^position "(.*?)" is not empty$/) do |posicion|
 end
 
 Given(/^I create a large ship in position "(.*?)"$/) do |posicion|
-	posiciones= [posicion, "3:4"]
-	@barco_grande= Barco.new(posiciones)
+	@barco_grande= Barco.new([posicion, "3:4"])
+	@tablero.agregar_barco(@barco_grande)
 end
 
 
