@@ -1,8 +1,5 @@
 PADRINO_ENV = 'test' unless defined?(PADRINO_ENV)
 
-require 'capybara'
-require 'capybara/dsl'
-
 require 'simplecov'
 SimpleCov.start do
 	root(File.join(File.dirname(__FILE__), '..'))
@@ -25,11 +22,4 @@ end
 
 def app
   BatallaNaval::App.tap { |app|  }
-end
-
-
-Capybara.configure do |c|
-  c.javascript_driver = :poltergeist
-  c.default_driver = :poltergeist
-  c.app_host = "http://localhost:3000"
 end

@@ -1,10 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + "/../../config/boot")
-require_relative '../../app/app.rb'
-
 require 'capybara/cucumber'
 require 'rspec/expectations'
+require_relative '../../app/app'
 
-#require 'simplecov'
 require 'simplecov'
 SimpleCov.start do
   root(File.join(File.dirname(__FILE__), '..','..'))
