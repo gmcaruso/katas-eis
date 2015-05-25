@@ -1,5 +1,5 @@
 require_relative 'models/tablero.rb'
-module Batalla_Naval
+module Battleship
   class App < Padrino::Application
     register Padrino::Rendering
     register Padrino::Helpers
