@@ -1,9 +1,0 @@
----
-:orm: none
-:test: rspec
-:mock: none
-:script: none
-:renderer: slim
-:stylesheet: none
-:namespace: BatallaNavalNueva
-:migration_format: number
