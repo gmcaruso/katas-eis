@@ -9,6 +9,3 @@ bundle exec rake
 cd ..
 cd tenis
 bundle exec rake
-
-before_script:
- - chmod +x build_all

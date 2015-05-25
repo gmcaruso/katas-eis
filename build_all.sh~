@@ -11,4 +11,4 @@ cd tenis
 bundle exec rake
 
 before_script:
- - chmod +x build_all.sh
+ - chmod +x build_all
