@@ -1,5 +1,4 @@
-require_relative '../spec_helper.rb'
-require_relative '../../app/models/tablero.rb'
+require_relative '../app/models/tablero.rb'
 
 describe Tablero do
 	
