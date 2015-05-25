@@ -39,5 +39,5 @@ Capybara.configure do |c|
 end
 
 # Mounts the core application for this project
-Padrino.mount('Battleship::App', :app_file => Padrino.root('app/app.rb')).to('/')
+Padrino.mount('Batalla_Naval::App', :app_file => Padrino.root('app/app.rb')).to('/')
 

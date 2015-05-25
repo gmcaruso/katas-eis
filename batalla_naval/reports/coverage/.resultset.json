@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/sysone/Desktop/Katas/proyecto-base-katas/battleship/app/models/tablero.rb": [
+      "/home/sysone/Desktop/Katas/proyecto-base-katas/Batalla_Naval/app/models/tablero.rb": [
         1,
         null,
         1,
@@ -93,7 +93,7 @@
         null,
         null
       ],
-      "/home/sysone/Desktop/Katas/proyecto-base-katas/battleship/app/models/barco.rb": [
+      "/home/sysone/Desktop/Katas/proyecto-base-katas/Batalla_Naval/app/models/barco.rb": [
         1,
         null,
         1,
