@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+    <meta charset="utf-8">
+	</head>
+	<body>
+
+	<h1>Batalla Naval</h1>
+
+	<h4><%= @tablero_creado %></h4> 
+	
+
+	<form method="POST" action="crear_tablero">
+		 <%= csrf_token_field %>
+		 <h3> Crear Tablero </h3>
+		 <p>	
+		 	Dimension X:
+		 	<input type="text" name="x" id="dimension1"/>
+		 </p>
+		 <p>
+			Dimension Y:
+			<input type="text" name="y" id="dimension2"/>
+		 </p>
+		<input type="submit" value="Setear dimensiones"/>
+
+		
+	</form>
+
+	</body>
+</html>
