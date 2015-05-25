@@ -2,11 +2,11 @@
   "Cucumber Features": {
     "coverage": {
     },
-    "timestamp": 1432511079
+    "timestamp": 1432513657
   },
   "RSpec": {
     "coverage": {
-      "/home/sysone/Desktop/Katas/proyecto-base-katas/batalla_naval2/app/models/tablero.rb": [
+      "/home/sysone/Desktop/Katas/proyecto-base-katas/batalla_naval/app/models/tablero.rb": [
         1,
         null,
         1,
@@ -98,7 +98,7 @@
         null,
         null
       ],
-      "/home/sysone/Desktop/Katas/proyecto-base-katas/batalla_naval2/app/models/barco.rb": [
+      "/home/sysone/Desktop/Katas/proyecto-base-katas/batalla_naval/app/models/barco.rb": [
         1,
         null,
         1,
@@ -121,6 +121,6 @@
         null
       ]
     },
-    "timestamp": 1432511076
+    "timestamp": 1432513655
   }
 }
