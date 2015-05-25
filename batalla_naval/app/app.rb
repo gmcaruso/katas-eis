@@ -1,3 +1,4 @@
+require_relative 'models/tablero.rb'
 module Battleship
   class App < Padrino::Application
     register Padrino::Rendering
