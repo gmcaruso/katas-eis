@@ -24,8 +24,14 @@ module Battleship
     end
 
     post :crear_barco do
-      pepepe= params[:posiciones].to_s
-      barco= Barco.new([pepepe])
+      secciones=[]
+      secciones.push(params[:posicion_uno].to_s)
+      secciones.push(params[:posicion_dos].to_s)
+      secciones.push(params[:posicion_tres].to_s)
+      secciones.push(params[:posicion_cuatro].to_s)
+      secciones.push(params[:posicion_cinco].to_s)
+      barco= Barco.new(secciones)
+      pepepe= [params[:posiciones].to_s]
       puts "#{pepepe} SDSSSSSSSSSSSSSS"
       @tablero=session[:tablero]
       @barco_creado=@tablero.agregar_barco(barco)

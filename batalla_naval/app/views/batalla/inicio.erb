@@ -28,13 +28,19 @@
 	<p> <h4><%= @barco_creado %></h4> </p>
 
 	<form method="POST" action="crear_barco">
-		 <%= csrf_token_field %>
-		 <h3> Crear Barco </h3>
-		 <p>
-			Posiciones del Barco:
-			<input type="text" name="posiciones" id="en_posiciones"/>
-			*Las posiciones deben ser definidas como, por ej: "posicion x del barco:posicion y del barco"
-		 </p>
+		<%= csrf_token_field %>
+		<h3> Crear Barco </h3>
+		<h4>Posiciones del Barco</h4>
+
+		<p>Posición uno: 	<input type="text" name="posicion_uno" id="en_posiciones_uno"/> *</p>
+		<p>Posición dos:	<input type="text" name="posicion_dos" id="en_posiciones_dos"/> *</p>
+		<p>Posición tres:	<input type="text" name="posicion_tres" id="en_posiciones_tres"/> *</p>
+		<p>Posición cuatro:	<input type="text" name="posicion_cuatro" id="en_posiciones_cuatro"/> *</p>
+		<p>Posición cinco:	<input type="text" name="posicion_cinco" id="en_posiciones_cinco"/> *</p>
+
+		<p>*Las posiciones deben ser definidas como, por ej: "posicion x del barco:posicion y del barco"</p>
+		<p>Maximas secciones por barco: 5</p>
+		 
 		<input type="submit" value="Añadir a flota"/>
 	</form>
 	------------------------------------------------------------------------------

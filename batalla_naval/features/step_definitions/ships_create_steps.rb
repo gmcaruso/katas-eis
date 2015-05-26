@@ -18,9 +18,9 @@ end
 
 Given(/^I create a small ship in position "(.*?)"$/) do |posicion|
 	page.should have_content("Crear Barco")
-	find_by_id("en_posiciones")
+	find_by_id("en_posiciones_uno")
 
-	fill_in('en_posiciones', :with => posicion)
+	fill_in('en_posiciones_uno', :with => posicion)
 
 	has_button?('Añadir a flota').should eq true
   	click_button('Añadir a flota')
@@ -39,13 +39,12 @@ end
 
 Given(/^I create a large ship in position "(.*?)"$/) do |posicion|
 	page.should have_content("Crear Barco")
-	find_by_id("en_posiciones")
+	find_by_id("en_posiciones_uno")
+	find_by_id("en_posiciones_dos")
 
-	fill_in('en_posiciones', :with => posicion)
-	has_button?('Añadir a flota').should eq true
-  	click_button('Añadir a flota')
+	fill_in('en_posiciones_uno', :with => posicion)
+	fill_in('en_posiciones_dos', :with => "3:4")
 
-	fill_in('en_posiciones', :with => "3:4")
 	has_button?('Añadir a flota').should eq true
   	click_button('Añadir a flota')
 
