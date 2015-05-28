@@ -9,12 +9,14 @@ module Battleship
       File.read(File.join('public', 'index.html'))
     end
 
-    get 'mipagina' do
-      render 'batalla/inicio'
+    get :batalla_naval do
+       render 'batalla/inicio'
     end
 
-    post 'mipagina' do
-      @nombre = params[:nombre]
+    post :crear_tablero do
+      session[:tablero]= Tablero.new(params[:x], params[:y])
+      @tablero_creado= "Tablero creado de #{params[:x]} por #{params[:y]}"
+      
       render 'batalla/inicio' 
     end
 

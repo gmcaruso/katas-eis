@@ -5,16 +5,22 @@
 	</head>
 	<body>
 
-	<h1>Hola</h1>
+	<h1>Batalla Naval</h1>
 
-	<p>El parametro nombre vale: <%= @nombre %></p>
-	
+	<p> <h4><%= @tablero_creado %></h4> </p>
 
-	<form method="POST" action="mipagina">
+	<form method="POST" action="crear_tablero">
 		 <%= csrf_token_field %>
-		 Establecer nuevo valor para nombre:
-		<input type="text" name="nombre" />
-		<input type="submit" value="enviar" id="boton_enviar"/>
+		 <h3> Crear Tablero </h3>
+		 <p>	
+		 	Alto:
+		 	<input type="text" name="x" id="dimension1"/>
+		 </p>
+		 <p>
+			Ancho:
+			<input type="text" name="y" id="dimension2"/>
+		 </p>
+		<input type="submit" value="Setear dimensiones"/>
 	</form>
 
 	</body>
