@@ -20,5 +20,30 @@ module Battleship
       render 'batalla/inicio' 
     end
 
+    post :crear_barco do
+      secciones=[]
+      if params[:posicion_uno].to_s != ""
+        secciones.push(params[:posicion_uno].to_s)
+      end
+      if params[:posicion_dos].to_s != ""
+        secciones.push(params[:posicion_dos].to_s)
+      end
+      if params[:posicion_tres].to_s != ""
+        secciones.push(params[:posicion_tres].to_s)
+      end
+      if params[:posicion_cuatro].to_s != ""
+        secciones.push(params[:posicion_cuatro].to_s)
+      end
+      if params[:posicion_cinco].to_s != ""
+        secciones.push(params[:posicion_cinco].to_s)
+      end
+      barco= Barco.new(secciones)
+      @tablero=session[:tablero]
+      @barco_creado=@tablero.agregar_barco(barco)
+      session[:tablero]= @tablero
+            
+      render 'batalla/inicio' 
+    end
+
   end
 end
