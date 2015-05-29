@@ -27,14 +27,29 @@
 
 	<form method="POST" action="crear_barco_chico">
 		<%= csrf_token_field %>
-		<h3> Crear Barco </h3>
+		<h3> Crear Barco Chico</h3>
 		<h4>Posiciones del Barco</h4>
 
-		<p>Posición uno: 	<input type="text" name="posicion_uno" id="en_posiciones_uno"/> *</p>
+		<p>Posición: 	<input type="text" name="posicion_uno" id="en_posiciones_uno_chico"/> *</p>
 
 		<p>*Las posiciones deben ser definidas como, por ej: "posicion X del barco:posicion Y del barco"</p>
 		 
 		<input type="submit" value="Añadir Barco chico a flota"/>
+	</form>
+	------------------------------------------------------------------------------
+	<p> <h4><%= @barco_creado %></h4> </p>
+
+	<form method="POST" action="crear_barco_grande">
+		<%= csrf_token_field %>
+		<h3> Crear Barco Grande</h3>
+		<h4>Posiciones del Barco</h4>
+
+		<p>Posición uno: 	<input type="text" name="posicion_uno" id="en_posiciones_uno_grande"/> *</p>
+		<p>Posición dos: 	<input type="text" name="posicion_dos" id="en_posiciones_dos_grande"/> *</p>
+
+		<p>*Las posiciones deben ser definidas como, por ej: "posicion X del barco:posicion Y del barco"</p>
+		 
+		<input type="submit" value="Añadir Barco grande a flota"/>
 	</form>
 	------------------------------------------------------------------------------
 	<p> <h4><%= @hay_barco %></h4> </p>
@@ -48,6 +63,7 @@
 		 </p>
 		<input type="submit" value="Ver posición"/>
 	</form>
+
 
 	</body>
 </html>

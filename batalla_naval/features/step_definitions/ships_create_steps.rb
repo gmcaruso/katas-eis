@@ -17,10 +17,10 @@ Given(/^a board with dimensions "(.*?)" x "(.*?)"$/) do |dimension1, dimension2|
 end
 
 Given(/^I create a small ship in position "(.*?)"$/) do |posicion|
-	page.should have_content("Crear Barco")
-	find_by_id("en_posiciones_uno")
+	page.should have_content("Crear Barco Chico")
+	find_by_id("en_posiciones_uno_chico")
 
-	fill_in('en_posiciones_uno', :with => posicion)
+	fill_in('en_posiciones_uno_chico', :with => posicion)
 
 	has_button?('Añadir Barco chico a flota').should eq true
   	click_button('Añadir Barco chico a flota')
@@ -38,7 +38,16 @@ Then(/^position "(.*?)" is not empty$/) do |posicion|
 end
 
 Given(/^I create a large ship in position "(.*?)"$/) do |posicion|
-	pending
+	page.should have_content("Crear Barco Grande")
+	find_by_id("en_posiciones_uno_grande")
+	find_by_id("en_posiciones_dos_grande")
+
+	fill_in('en_posiciones_uno_grande', :with => posicion)
+	fill_in('en_posiciones_dos_grande', :with => "3:4")
+
+	has_button?('Añadir Barco grande a flota').should eq true
+  	click_button('Añadir Barco grande a flota')
+  	page.should have_content("Barco agregado!")
 end
 
 
