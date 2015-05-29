@@ -29,7 +29,7 @@ Then(/^I get hit$/) do
 end
 
 Then(/^I get water$/) do
-	pending
+	page.should have_content("Agua")
 end
 
 Then(/^I get sink$/) do
