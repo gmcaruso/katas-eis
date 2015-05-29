@@ -22,13 +22,19 @@ Given(/^I create a small ship in position "(.*?)"$/) do |posicion|
 
 	fill_in('en_posiciones_uno', :with => posicion)
 
-	has_button?('Añadir Barco a flota').should eq true
-  	click_button('Añadir Barco a flota')
+	has_button?('Añadir Barco chico a flota').should eq true
+  	click_button('Añadir Barco chico a flota')
   	page.should have_content("Barco agregado!")
 end
 
 Then(/^position "(.*?)" is not empty$/) do |posicion|
-	pending
+	page.should have_content("Chequeo de posiciones")
+	find_by_id("ver")
+	fill_in('ver', :with => posicion)
+
+	has_button?('Ver posición').should eq true
+  	click_button('Ver posición')
+  	page.should have_content("Hay Barco")
 end
 
 Given(/^I create a large ship in position "(.*?)"$/) do |posicion|
