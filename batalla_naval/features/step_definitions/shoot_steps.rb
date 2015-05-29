@@ -15,7 +15,13 @@ Given(/^a large ship in position: "(.*?)" "(.*?)"$/) do |posicion1, posicion2|
 end
 
 Given(/^I shoot to position "(.*?)"$/) do |posicion|
- 	pending
+ 	page.should have_content("Ataque a Barcos")
+
+	find_by_id("objetivo")
+	fill_in('objetivo', :with => posicion)
+
+	has_button?('Disparar').should eq true
+  	click_button('Disparar')
 end
 
 Then(/^I get hit$/) do

@@ -63,6 +63,19 @@
 		 </p>
 		<input type="submit" value="Ver posición"/>
 	</form>
+	------------------------------------------------------------------------------
+	<p> <h4><%= @disparo %></h4> </p>
+	
+	<form method="POST" action="disparar">
+		 <%= csrf_token_field %>
+		 <h3> Ataque a Barcos </h3>
+		 <p>
+		 	Posición:
+			<input type="text" name="posicion_en_mira" id="objetivo"/>
+			*Las posiciones deben ser definidas como, por ej: "posicion x del barco:posicion y del barco"
+		 </p>
+		<input type="submit" value="Disparar"/>
+	</form>
 
 
 	</body>
