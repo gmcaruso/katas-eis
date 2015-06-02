@@ -1,8 +1,15 @@
-require_relative '../../app/models/tablero.rb'
-require_relative '../../app/models/barco.rb'
-
 Given(/^a board with dimensions "(.*?)" x "(.*?)"$/) do |dimension1, dimension2|
-  pending
+  visit '/batalla_naval'
+	
+	find_by_id("dimension1")
+	find_by_id("dimension2")
+
+	fill_in('dimension1', :with => dimension1)
+	fill_in('dimension2', :with => dimension2)
+
+	has_button?('Setear dimensiones').should eq true
+	click_button('Setear dimensiones')
+
 end
 
 Given(/^I create a small ship in position "(.*?)"$/) do |posicion|
