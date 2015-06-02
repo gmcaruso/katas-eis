@@ -13,7 +13,12 @@ Given(/^a board with dimensions "(.*?)" x "(.*?)"$/) do |dimension1, dimension2|
 end
 
 Given(/^I create a small ship in position "(.*?)"$/) do |posicion|
-  pending
+  find_by_id("en_posiciones_uno_chico")
+
+	fill_in('en_posiciones_uno_chico', :with => posicion)
+
+	has_button?('Añadir Barco chico a flota').should eq true
+  click_button('Añadir Barco chico a flota')
 end
 
 Then(/^position "(.*?)" is not empty$/) do |posicion|
