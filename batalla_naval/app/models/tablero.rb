@@ -1,5 +1,6 @@
 require_relative '../../app/models/barco.rb'
 require_relative '../../app/models/fuera_de_mapa_exception.rb'
+require_relative '../../app/models/barco_solapado_exception.rb'
 
 class Tablero
 
@@ -22,7 +23,11 @@ class Tablero
 
   def posicionar_barco_en_radar(barco)
     barco.posiciones.each do |posicion|
-      posiciones_ocupadas.push(posicion)
+      if !posiciones_ocupadas.include? posicion
+        posiciones_ocupadas.push(posicion)
+      else
+        raise BarcoSolapadoException, "No se puede poner un barco encima de otro"
+      end
     end
   end
 

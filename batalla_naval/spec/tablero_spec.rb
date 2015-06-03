@@ -21,11 +21,20 @@ describe Tablero do
 			expect(tablero.agregar_barco(barco)).to eq "Barco agregado!"
 		end
 
-		it 'Si coloco un barco fuera del mapa debe devolver -Barco fuera de mapa-' do
+		it 'Si coloco un barco fuera del mapa debe devolver la excepcion -Barco fuera de mapa-' do
 			tablero= Tablero.new(4,4)
 			barco= Barco.new(["3:1","3:2","3:3","5:5"])
 			
 			expect{tablero.agregar_barco(barco)}.to raise_error(BarcoFueraDeMapaException)
+		end
+
+		it 'Si coloco un barco sobre otro debe devolver la excepcion -Barco solapado-' do
+			tablero= Tablero.new(4,4)
+			barco= Barco.new(["3:1","3:2","3:3"])
+			barco2= Barco.new(["3:1","3:2","3:3"])
+			
+			tablero.agregar_barco(barco)
+			expect{tablero.agregar_barco(barco2)}.to raise_error(BarcoSolapadoException)
 		end
 		
 	end
