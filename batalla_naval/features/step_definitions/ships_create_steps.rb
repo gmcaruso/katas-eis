@@ -7,7 +7,6 @@ Given(/^a board with dimensions "(.*?)" x "(.*?)"$/) do |dimension1, dimension2|
 	fill_in('dimension1', :with => dimension1)
 	fill_in('dimension2', :with => dimension2)
 
-	has_button?('Setear dimensiones').should eq true
 	click_button('Setear dimensiones')
 
 end
@@ -17,16 +16,21 @@ Given(/^I create a small ship in position "(.*?)"$/) do |posicion|
 
 	fill_in('en_posiciones_uno_chico', :with => posicion)
 
-	has_button?('Añadir Barco chico a flota').should eq true
   click_button('Añadir Barco chico a flota')
 end
 
 Then(/^position "(.*?)" is not empty$/) do |posicion|
-  pending
+	pending
 end
 
 Given(/^I create a large ship in position "(.*?)"$/) do |posicion|
-  pending
+	find_by_id("en_posiciones_uno_grande")
+	find_by_id("en_posiciones_dos_grande")
+
+	fill_in('en_posiciones_uno_grande', :with => posicion)
+	fill_in('en_posiciones_dos_grande', :with => "3:4")
+
+	click_button('Añadir Barco grande a flota')
 end
 
 
