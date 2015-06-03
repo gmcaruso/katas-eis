@@ -25,6 +25,6 @@ Then(/^I get water$/) do
 end
 
 Then(/^I get sink$/) do
-  pending
+  page.should have_content("Hundido")
 end
 
