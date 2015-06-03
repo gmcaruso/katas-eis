@@ -43,6 +43,14 @@ class Tablero
     entra_en_mapa= entra_en_mapa && (posicion_del_barco[0].to_i < ancho.to_i && posicion_del_barco[2].to_i < alto.to_i)
   end
 
+  def ver_posicion(posicion)
+    if (posiciones_ocupadas.include?(posicion))
+      "Hay Barco"
+    else
+      "Esta vacío"
+    end
+  end
+
   def alto
     @alto
   end

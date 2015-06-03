@@ -52,6 +52,18 @@
      
     <input type="submit" value="Añadir Barco grande a flota"/>
   </form>
+  ------------------------------------------------------------------------------
+  <p> <h4><%= @hay_barco %></h4> </p>
+  
+  <form method="POST" action="ver_posicion">
+     <%= csrf_token_field %>
+     <h3> Chequeo de posiciones </h3>
+     <p>
+      Posición:
+      <input type="text" name="posicion" id="ver"/>
+     </p>
+    <input type="submit" value="Ver posición"/>
+  </form>
   
   </body>
 </html>

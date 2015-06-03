@@ -39,4 +39,18 @@ describe Tablero do
 		
 	end
 
+	describe 'ver_posicion' do
+
+		it 'Si la posición esta ocupada debe devolver -Hay Barco-' do
+			tablero= Tablero.new(4,4)
+			barco= Barco.new(["3:1","3:2","3:3"])
+			
+			tablero.agregar_barco(barco)
+
+			expect(tablero.ver_posicion("3:2")).to eq "Hay Barco"
+
+		end
+
+	end
+
 end

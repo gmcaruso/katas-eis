@@ -49,5 +49,11 @@ module Battleship
       render 'batalla/inicio' 
     end
 
+    post :ver_posicion do
+      tablero= session[:tablero]
+      @hay_barco= tablero.ver_posicion(params[:posicion])
+      render 'batalla/inicio' 
+    end
+
   end
 end

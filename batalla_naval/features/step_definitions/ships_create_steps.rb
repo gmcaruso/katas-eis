@@ -20,7 +20,11 @@ Given(/^I create a small ship in position "(.*?)"$/) do |posicion|
 end
 
 Then(/^position "(.*?)" is not empty$/) do |posicion|
-	pending
+	find_by_id("ver")
+	fill_in('ver', :with => posicion)
+
+	click_button('Ver posición')
+	page.should have_content("Hay Barco")
 end
 
 Given(/^I create a large ship in position "(.*?)"$/) do |posicion|
