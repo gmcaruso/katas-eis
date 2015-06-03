@@ -51,6 +51,33 @@ class Tablero
     end
   end
 
+  def disparar_en(posicion)
+    if (ver_posicion(posicion) == "Hay Barco")
+      inspeccionar_barcos_en(posicion)
+    else
+      "Agua"
+    end
+  end
+
+  def inspeccionar_barcos_en(posicion)
+
+    flota_de_barcos.each do |barco|
+      
+      barco.posiciones.each do |posicion_barco|
+        if posicion_barco == posicion
+          barco.set_tamanho(barco.tamanho - 1)
+          if barco.tamanho <= 0
+            return "Hundido"
+            
+          else
+            return "Tocado"
+            
+          end
+        end
+      end
+    end
+  end
+
   def alto
     @alto
   end

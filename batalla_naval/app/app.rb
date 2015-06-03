@@ -55,5 +55,13 @@ module Battleship
       render 'batalla/inicio' 
     end
 
+    post :disparar do
+      tablero= session[:tablero]
+      @disparo= tablero.disparar_en(params[:posicion_en_mira])
+      session[:tablero]= tablero      
+
+      render 'batalla/inicio' 
+    end
+
   end
 end

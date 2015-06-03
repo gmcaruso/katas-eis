@@ -61,4 +61,16 @@ describe Tablero do
 
 	end
 
+	describe 'disparar_en' do
+
+    it 'Si disparo donde no hay un barco entonces debe devolver -Agua-' do
+      tablero= Tablero.new(4,4)
+      barco= Barco.new(["3:1","3:2","3:3"])
+      
+      tablero.agregar_barco(barco)
+
+      expect(tablero.disparar_en("3:4")).to eq "Agua"
+    end
+  end
+
 end
