@@ -5,7 +5,7 @@ Given(/^a large ship in position: "(.*?)" "(.*?)"$/) do |posicion1, posicion2|
   fill_in('en_posiciones_uno_grande', :with => posicion1)
   fill_in('en_posiciones_dos_grande', :with => posicion2)
 
-    click_button('Añadir Barco grande a flota')
+  click_button('Añadir Barco grande a flota')
 end
 
 Given(/^I shoot to position "(.*?)"$/) do |posicion|
@@ -21,7 +21,7 @@ Then(/^I get hit$/) do
 end
 
 Then(/^I get water$/) do
-  pending
+  page.should have_content("Agua")
 end
 
 Then(/^I get sink$/) do
