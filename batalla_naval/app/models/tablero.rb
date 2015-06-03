@@ -1,4 +1,5 @@
 require_relative '../../app/models/barco.rb'
+require_relative '../../app/models/fuera_de_mapa_exception.rb'
 
 class Tablero
 
@@ -15,7 +16,7 @@ class Tablero
       flota_de_barcos.push(barco)
       "Barco agregado!"
     else 
-      "Barco fuera de mapa"
+      raise BarcoFueraDeMapaException, "Barco fuera de mapa"
     end
   end
 

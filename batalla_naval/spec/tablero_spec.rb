@@ -25,7 +25,7 @@ describe Tablero do
 			tablero= Tablero.new(4,4)
 			barco= Barco.new(["3:1","3:2","3:3","5:5"])
 			
-			expect(tablero.agregar_barco(barco)).to eq "Barco fuera de mapa"
+			expect{tablero.agregar_barco(barco)}.to raise_error(BarcoFueraDeMapaException)
 		end
 		
 	end
