@@ -17,7 +17,7 @@ Given(/^I shoot to position "(.*?)"$/) do |posicion|
 end
 
 Then(/^I get hit$/) do
-  pending
+  page.should have_content("Tocado")
 end
 
 Then(/^I get water$/) do

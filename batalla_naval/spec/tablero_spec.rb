@@ -71,6 +71,17 @@ describe Tablero do
 
       expect(tablero.disparar_en("3:4")).to eq "Agua"
     end
+  
+
+  	it 'Si disparo en una seccion de un barco entonces debe devolver -Tocado-' do
+      tablero= Tablero.new(4,4)
+      barco= Barco.new(["3:1","3:2","3:3"])
+      
+      tablero.agregar_barco(barco)
+
+      expect(tablero.disparar_en("3:3")).to eq "Tocado"
+    end
+    
   end
 
 end
